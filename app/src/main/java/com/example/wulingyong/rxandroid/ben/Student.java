@@ -1,7 +1,11 @@
 package com.example.wulingyong.rxandroid.ben;
 
+import android.databinding.BindingAdapter;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 import java.io.Serializable;
 import java.util.List;

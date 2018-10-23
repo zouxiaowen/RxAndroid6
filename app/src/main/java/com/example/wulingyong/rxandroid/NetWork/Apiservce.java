@@ -3,7 +3,7 @@ package com.example.wulingyong.rxandroid.NetWork;
 
 import com.example.wulingyong.rxandroid.ben.Student;
 import com.example.wulingyong.rxandroid.ben.UseBen;
-import com.example.wulingyong.rxandroid.ben.logben;
+import com.example.wulingyong.rxandroid.ben.Logben;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -12,7 +12,7 @@ import retrofit2.http.Query;
 public interface Apiservce {
     //登录  mobile   password
     @GET("app/member/register/loginMem")
-    Observable<BaseResult<logben>> loging(@Query("mobile") String mobile, @Query("password") String password);
+    Observable<BaseResult<Logben>> loging(@Query("mobile") String mobile, @Query("password") String password);
     //首页
     @GET("app/mobileIndex")
     Observable<BaseResult<String>> Homepage(@Query("typeId") int typeId, @Query("name") String name);

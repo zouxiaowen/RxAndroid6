@@ -1,28 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="users"
-            type="com.example.wulingyong.rxandroid.ben.Userben"/>
+            type="com.example.wulingyong.rxandroid.ben.Logben" />
 
+        <variable
+            name="activitymouble"
+            type="com.example.wulingyong.rxandroid.viewmodel.ActivityViewModel" />
+
+        <variable
+            name="userben"
+            type="com.example.wulingyong.rxandroid.ben.Userben" />
     </data>
 
-<android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/smart"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview"
+
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+
+                <ImageView
+                    android:id="@+id/image"
+                    imageUrl="@{userben.name}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:onClick="@{activitymouble::btnloging }"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="请求数据"
+                    app:layout_constraintTop_toBottomOf="@+id/image" />
+
+                <TextView
+                    android:id="@+id/textname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{activitymouble.NAME}"
+                    app:layout_constraintTop_toBottomOf="@+id/button" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/textname" />
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-</android.support.constraint.ConstraintLayout>
 </layout>

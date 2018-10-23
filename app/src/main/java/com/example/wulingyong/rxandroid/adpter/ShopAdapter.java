@@ -1,9 +1,7 @@
 package com.example.wulingyong.rxandroid.adpter;
 
 import android.support.annotation.Nullable;
-import android.view.View;
 import android.widget.ImageView;
-
 import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -11,9 +9,7 @@ import com.example.wulingyong.rxandroid.R;
 import com.example.wulingyong.rxandroid.ben.Student;
 import com.example.wulingyong.rxandroid.util.GlideUtils;
 import com.example.wulingyong.rxandroid.util.StringUtils;
-
 import java.util.List;
-
 public class ShopAdapter extends BaseQuickAdapter<Student.ProductsBean,BaseViewHolder> {
 
     public ShopAdapter(int layoutResId, @Nullable List<Student.ProductsBean> data) {
@@ -41,4 +37,6 @@ public class ShopAdapter extends BaseQuickAdapter<Student.ProductsBean,BaseViewH
             helper.setText(R.id.textView_money, "￥" + monty);
         }
     }
+
+
 }
