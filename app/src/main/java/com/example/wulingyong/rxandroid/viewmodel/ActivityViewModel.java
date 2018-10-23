@@ -23,6 +23,7 @@ public class ActivityViewModel extends ViewModel {
 
     }
     public void btnloging(final View v){
+        v.setEnabled(false);
         NetUtls.getInstance().getApiservce().
                 loging("17621786193", MD5Utils.string2MD5("123456"))
                 .subscribeOn(Schedulers.io())
@@ -32,12 +33,13 @@ public class ActivityViewModel extends ViewModel {
                     protected void onSuccees(BaseResult<Logben> t) {
                         NAME.set(t.getData().getLevel());
                         ToastUtil.showShort(v.getContext(),NAME.get());
+                        v.setEnabled(true);
 
                     }
 
                     @Override
                     protected void onFailure(BaseResult<Logben> t) {
-
+                        v.setEnabled(true);
                     }
                 })
         ;
