@@ -5,6 +5,7 @@ import android.view.View;
 import com.example.wulingyong.rxandroid.MainActivity;
 import com.example.wulingyong.rxandroid.R;
 import com.example.wulingyong.rxandroid.databinding.ActivityBinding;
+import com.example.wulingyong.rxandroid.util.ToastUtil;
 
 public class Activity extends BaseActivity<ActivityBinding> {
 
@@ -32,7 +33,8 @@ public class Activity extends BaseActivity<ActivityBinding> {
                 RecycleViewActivity.openActivity(this);
                 break;
             case R.id.button3:
-                TheRecyclerActivity.openActivity(this);
+                ToastUtil.showShort(this,"框架本就是简化版的databinding");
+//                TheRecyclerActivity.openActivity(this);
                 break;
         }
     }
