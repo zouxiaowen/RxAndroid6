@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+
+    >
+    <data>
+        <variable
+            name="product"
+            type="com.example.wulingyong.rxandroid.ben.Student.ProductsBean"/>
+        <variable
+            name="productimage"
+            type="com.example.wulingyong.rxandroid.ben.MainNewInfoBean.ProductsBean.ProductImagesBean"/>
+    </data>
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        imageUrls="@{productimage.source}"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/text"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        android:text="@{product.name}"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>
+</layout>
+

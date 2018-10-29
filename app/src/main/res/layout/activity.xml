@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Activity">
+<Button
+    android:id="@+id/button"
+    android:text="跳转普通"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:layout_width="match_parent"
+        android:text="Recycleview"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        android:text="引用框架RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>
+</layout>

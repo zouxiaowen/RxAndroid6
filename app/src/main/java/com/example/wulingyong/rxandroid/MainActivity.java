@@ -2,6 +2,7 @@ package com.example.wulingyong.rxandroid;
 
 import android.arch.lifecycle.ViewModelProvider;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
@@ -31,6 +32,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     private ShopAdapter shopAdapter;
     private ActivityViewModel activityViewModel;
     public String imageurl="http://mallserver2sitecdn.gvg666.com/redsunMall//upload/image/201808/438f9827-946c-443c-ba59-8ea173c87a4a_thumbnail.jpg";
+
+    public static void openActivity(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected int getLayoutResId() {

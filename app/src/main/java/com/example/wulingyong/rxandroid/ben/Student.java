@@ -6,6 +6,7 @@ import android.os.Parcelable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.wulingyong.rxandroid.util.GlideUtils;
 
 import java.io.Serializable;
 import java.util.List;
@@ -250,6 +251,10 @@ public class Student implements Serializable {
         private int hits;
         private int sales;
         private double displayPrice;
+
+
+
+
 
         public double getDisplayPrice() {
             return displayPrice;

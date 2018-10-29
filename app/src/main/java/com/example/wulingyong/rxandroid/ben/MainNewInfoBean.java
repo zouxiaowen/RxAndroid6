@@ -1,7 +1,11 @@
 package com.example.wulingyong.rxandroid.ben;
 
+import android.databinding.BindingAdapter;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.ImageView;
+
+import com.example.wulingyong.rxandroid.util.GlideUtils;
 
 import java.util.List;
 
@@ -608,7 +612,10 @@ public class MainNewInfoBean {
             private String medium;
             private String thumbnail;
             private int order;
-
+            @BindingAdapter("imageUrls")
+            public static void loadImage(ImageView imageView, String source) {
+                GlideUtils.loadImage(imageView.getContext(),source,imageView);
+            }
             public String getSource() {
                 return source;
             }
